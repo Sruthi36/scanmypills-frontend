@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">scanmyPills</string>
+    <string name="identify_tablet">Identify Tablet</string>
+    <string name="capture_loose_tablet">Capture a loose tablet</string>
+    <string name="how_it_works">How it works</string>
+    <string name="how_it_works_1">• Take a clear photo of the tablet</string>
+    <string name="how_it_works_2">• AI will compare with stored medicines</string>
+    <string name="how_it_works_3">• Get best matches with confidence scores</string>
+    <string name="tablet_image">Tablet Image</string>
+    <string name="capture_tablet">Capture Tablet</string>
+    <string name="take_clear_photo">Take a clear photo of the tablet</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="enter_medicine_name">Enter medicine name</string>
+</resources>

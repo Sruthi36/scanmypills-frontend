@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    tools:context=".ScanReviewActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9FAFB"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp"
+            app:navigationIcon="@drawable/ic_arrow_back">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan Medicine"
+                    android:textColor="@color/text_dark_navy"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review and confirm details"
+                    android:textColor="@color/text_soft_grey"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Success Banner -->
+            <LinearLayout
+                android:id="@+id/successBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_acceptance"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check"
+                    app:tint="#4CAF50" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Images processed successfully"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Please review and edit the details below"
+                        android:textColor="#388E3C"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Image Previews -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+                    <ImageView
+                        android:id="@+id/ivReviewFront"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pill_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+                    <ImageView
+                        android:id="@+id/ivReviewBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pill_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Input Fields -->
+            <TextView
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Medicine Name" />
+
+            <EditText
+                android:id="@+id/etMedicineName"
+                android:background="@drawable/bg_input_field"
+                android:padding="16dp"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Medicine Name" />
+
+            <TextView
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Manufacturer" />
+
+            <EditText
+                android:id="@+id/etManufacturer"
+                android:background="@drawable/bg_input_field"
+                android:padding="16dp"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Manufacturer Name" />
+
+            <TextView
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Expiry Date" />
+
+            <EditText
+                android:id="@+id/etExpiryDate"
+                android:background="@drawable/bg_input_field"
+                android:padding="16dp"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="DD/MM/YYYY" />
+
+            <TextView
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Batch Number" />
+
+            <EditText
+                android:id="@+id/etBatchNumber"
+                android:background="@drawable/bg_input_field"
+                android:padding="16dp"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Batch Number" />
+
+            <TextView
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Dosage Instructions" />
+
+            <EditText
+                android:id="@+id/etDosageInstructions"
+                android:background="@drawable/bg_input_field"
+                android:padding="16dp"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="e.g., Take 1 tablet twice daily"
+                android:minLines="3"
+                android:paddingVertical="12dp" />
+
+            <TextView
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Category (Optional)" />
+
+            <EditText
+                android:id="@+id/etCategory"
+                android:background="@drawable/bg_input_field"
+                android:padding="16dp"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="e.g., Pain Relief, Antibiotic" />
+
+            <LinearLayout
+                android:id="@+id/buttonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBack"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F3F4F6"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textColor="#4B5563"
+                    android:textSize="16sp"
+                    app:cornerRadius="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/btn_blue"
+                    android:text="Save Medicine"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/white"
+        android:elevation="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+                <ImageView
+                    android:id="@+id/ivNavHome"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_soft_grey"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navScan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_nav_active"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp">
+                <ImageView
+                    android:id="@+id/ivNavScan"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/btn_blue"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navIdentify"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+                <ImageView
+                    android:id="@+id/ivNavIdentify"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Identify"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_soft_grey"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navReminders"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+                <ImageView
+                    android:id="@+id/ivNavReminders"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reminders"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_soft_grey"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+                <ImageView
+                    android:id="@+id/ivNavProfile"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_soft_grey"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

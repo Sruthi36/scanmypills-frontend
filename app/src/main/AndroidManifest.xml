@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ScanmyPills"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        
+        <receiver android:name=".AlarmReceiver" android:exported="false" />
+        <service 
+            android:name=".AlarmService" 
+            android:exported="false" 
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_TYPE" android:value="Medicine reminder alarm playing sound and vibration" />
+        </service>
+        <receiver android:name=".BootReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity 
+            android:name=".AlarmRingActivity" 
+            android:exported="false" 
+            android:showWhenLocked="true"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:turnScreenOn="true" />
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Onboarding2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Onboarding3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TermsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountCreatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OtpVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateNewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordResetSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllMedicinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanPillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IdentifyPillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RemindersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicineDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditMedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IdentifyResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DataStorageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpSupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

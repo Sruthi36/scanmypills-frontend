@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".TermsActivity">
+
+    <!-- Header -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_arrow_back">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Terms and Conditions"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E5E7EB" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/bottomContainer"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#F9FAFB"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Welcome to SCANMYPILLS. Please read these terms and conditions carefully before using our application."
+                    android:textColor="#9CA3AF"
+                    android:textSize="14sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 1. Acceptance -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Acceptance of Terms"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="By creating an account and using SCANMYPILLS, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our application."
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 2. Disclaimer -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Medical Disclaimer"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="SCANMYPILLS is a medication management and information support tool designed to help users organize medicines and improve adherence. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding medications or health conditions."
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 3. Privacy -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Data Collection and Privacy"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="We collect user profile information (name, email) and medication data to provide personalized services. Uploaded prescriptions, medicine records, and reminders are stored securely within the application. All sensitive information is encrypted and protected according to our Privacy Policy. Users retain full control over their data and may delete or export their information at any time."
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 4. Responsibilities -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. User Responsibilities"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:text="As a user of SCANMYPILLS, you agree to:"
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="6dp"
+                android:text="• Provide accurate and updated information\n• Maintain the confidentiality of your account credentials\n• Use the application only for lawful medication management purposes\n• Verify medicine details with healthcare professionals when necessary\n• Comply with applicable healthcare and data protection regulations"
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 5. Accuracy -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. Accuracy of Information"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="While SCANMYPILLS aims to provide accurate medication information and reminders, the application should be used as a support tool. Users must verify dosage and medical instructions with doctors or pharmacists before consumption."
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 6. Liability -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6. Limitation of Liability"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="SCANMYPILLS and its developers shall not be liable for any indirect, incidental, or consequential damages arising from misuse of medication information or inability to use the application."
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 7. Changes -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7. Changes to Terms"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="We reserve the right to modify these terms at any time. Continued use of the application after updates indicates acceptance of the revised terms."
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <!-- 8. Contact -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8. Contact Information"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="For questions about these Terms and Conditions please contact us at"
+                android:textColor="#9CA3AF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="32dp"
+                android:text="support@scanmypills.com"
+                android:textColor="@color/text_dark_navy"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="120dp"
+            android:layout_height="56dp"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="#2563EB"
+            app:cornerRadius="12dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutSignUpButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDecline"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Decline"
+                android:textAllCaps="false"
+                android:textColor="#1E2A3A"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#F3F4F6"
+                app:cornerRadius="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAccept"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Accept"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#2563EB"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

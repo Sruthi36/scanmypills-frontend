@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_acceptance"
+    android:backgroundTint="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvReminderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="08:00"
+            android:textColor="@color/text_dark_navy"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvReminderDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="1 tablet • Daily"
+            android:textColor="@color/text_soft_grey"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewStatus"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_dot_green" />
+
+    <ImageView
+        android:id="@+id/ivToggle"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_toggle_on" />
+
+    <ImageView
+        android:id="@+id/ivDeleteReminder"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_delete"
+        android:contentDescription="Delete reminder" />
+</LinearLayout>
