@@ -103,6 +103,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val subtitle = findViewById<TextView>(R.id.tv_subtitle)
         val tagline = findViewById<TextView>(R.id.tv_tagline)
         val dotsLayout = findViewById<View>(R.id.layout_indicators)
+        val poweredBy = findViewById<TextView>(R.id.tv_powered_by)
 
         // 1. Background and Overlay Fade-in (300ms)
         background.animate().alpha(1f).setDuration(300).start()
@@ -124,7 +125,10 @@ class SplashScreenActivity : AppCompatActivity() {
         subtitle.animate().alpha(1f).setDuration(400).setStartDelay(150).start()
         tagline.animate().alpha(1f).setDuration(400).setStartDelay(150).start()
 
-        // 4. Dots appear and start wave animation after 500ms
+        // 4. Powered by Fade-in with 300ms delay
+        poweredBy.animate().alpha(1f).setDuration(500).setStartDelay(300).start()
+
+        // 5. Dots appear and start wave animation after 500ms
         dotsLayout.animate().alpha(1f).setDuration(300).setStartDelay(500).withEndAction {
             startPulseAnimation()
         }.start()

@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
     // 10.0.2.2 is the special IP to access localhost from Android Emulator
-    const val BASE_URL = "http://192.168.101.17:5000/"
+    const val BASE_URL = "http://180.235.121.253:8115/"
 
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()

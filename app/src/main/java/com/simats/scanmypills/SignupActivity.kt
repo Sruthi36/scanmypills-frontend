@@ -14,6 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 import android.util.Patterns
+// Removed InputFilter and Spanned imports as they're no longer needed for this behavior
 
 @Suppress("DEPRECATION")
 class SignupActivity : AppCompatActivity() {
@@ -37,6 +38,12 @@ class SignupActivity : AppCompatActivity() {
 
             if (fullName.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Double check name contains only letters and spaces
+            if (!fullName.all { it.isLetter() || it == ' ' }) {
+                Toast.makeText(this, "username should only contains letters and spaces", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
