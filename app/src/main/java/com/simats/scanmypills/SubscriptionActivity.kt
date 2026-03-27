@@ -27,7 +27,7 @@ class SubscriptionActivity : AppCompatActivity(), PurchasesUpdatedListener {
 
     companion object {
         private const val TAG = "SubscriptionActivity"
-        private const val SUBSCRIPTION_SKU = "univault_premium_subscription"
+        private const val SUBSCRIPTION_SKU = "scanmypills_premium_subscription"
         private const val TEST_SUBSCRIPTION_SKU = "android.test.purchased" // For testing
     }
 
